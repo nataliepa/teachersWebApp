@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css} "/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/insert-form.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+<div th:replace="/layout/header :: header"> </div>
+<div class="container-fluid main-content">
+    <form action="#" id="insertForm" th:action="@{/teachers/insert}" method="post" th:object="${teacherDTO}" class="insert-form mx-auto col-lg-5 col-md-8 col-sm-12">
+        <h4 class="text-center">Προσθήκη Διδάσκοντα</h4>
+        <div class="mb-3 mt-5">
+            <label for="id" class="form-label">Κωδικός</label>
+            <input type="text" th:field="*{id}" th:required="required" pattern="\d|[1-9]\d*" class="form-control" id="id">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Επώνυμο</label>
+            <input type="text" th:field="*{sname}" th:required="required" pattern="[a-zA-Zα-ωΑ-Ωάέήίύόώϊΐϋΰ]+" class="form-control" id="lastname">
+        </div>
+        <div class="mb-3">
+            <label for="firstname" class="form-label">Όνομα</label>
+            <input type="text" th:field="*{fname}" th:required="required" pattern="[a-zA-Zα-ωΑ-Ωάέήίύόώϊΐϋΰ]+" class="form-control" id="firstname">
+        </div>
+        <div class="action-buttons">
+            <a href="/teachers" class="btn btn-primary mt-4 action-button">< Πίσω</a>
+            <div class="space-between"></div>
+            <button type="submit" class="btn btn-primary mt-4 action-button primary">Προσθήκη</button>
+        </div>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+<!--                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <th:block th:if="${existsFlag}">
+                <div class="modal-body alert alert-danger" role="alert">
+                    <p class="modal-text">Ο διδάσκων υπάρχει ήδη</p>
+                </div>
+            </th:block>
+            <th:block th:unless="${existsFlag}">
+                <div class="modal-body alert alert-success" role="alert">
+                    <p class="modal-text">Ο διδάσκων προστέθηκε επιτυχώς</p>
+                </div>
+            </th:block>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary action-button primary modal-button" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="/layout/footer :: footer"> </div>
+
+<script th:inline="javascript">
+    $(document).ready(function() {
+        if([[${showModal}]]) {
+            $('#exampleModal').modal('show');
+        }
+    });
+</script>
+
+</body>
+</html>

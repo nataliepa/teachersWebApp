@@ -1,0 +1,36 @@
+.header-container {
+    display: flex;
+    flex-direction: row;
+    background: #6b2b27;
+    color: #f2fdfb;
+}
+
+.header-logos {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-logos img {
+    width: 100px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.header-logos .coding-factory img {
+    padding: 6px;
+    filter: invert(1);
+}
+
+.header {
+    align-self: center;
+}
+
+.header-style {
+    font-size: 130%;
+    font-weight: 400!important;
+}
+
+.sub-header-style {
+    font-size: 110%;
+    font-weight: 300;
+}

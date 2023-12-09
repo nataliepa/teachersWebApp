@@ -1,0 +1,73 @@
+.card-style {
+    margin: 50px 0;
+    transition: 1s;
+}
+
+.tr-spinner {
+    text-align: center;
+}
+
+.tr-spinner .spinner-border {
+    margin: 15px 0 8px 0;
+}
+
+.teacher-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.insert-btn {
+    background-color: #dfdddd;
+    color: black;
+    border: 2px solid lightgray;
+    border-radius: 130px;
+    padding: 0 17px;
+}
+
+.insert-btn:hover, .insert-btn:focus, insert-btn:focus-visible {
+    background-color: #dfdddd82 !important;
+    color: black !important;
+    border: 2px solid lightgray !important;
+}
+
+.insert-icon {
+    font-size: 30px;
+    padding: 0 2px;
+    border-radius: 50px;
+}
+
+.required-field, .already-exists {
+    color: red;
+}
+
+#input-id .required-field,
+#input-id .already-exists,
+#input-sname .required-field,
+#input-fname .required-field {
+    display: none;
+}
+
+#input-id.error .required-field,
+#input-id.id-error .already-exists,
+#input-sname.error .required-field,
+#input-fname.error .required-field {
+    display: block;
+}
+
+#input-id.error input,
+#input-id.id-error input,
+#input-sname.error input,
+#input-fname.error input {
+    border: 1px solid red;
+}
+
+.alert.alert-success {
+    margin: 0 !important;
+    padding: 10px;
+}
+
+.bi.bi-trash, .bi.bi-pencil-square {
+    cursor: pointer;
+}

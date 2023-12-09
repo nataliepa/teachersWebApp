@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers WebApp</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+<div th:replace="/layout/header :: header"> </div>
+<div class="container-fluid buttons main-content">
+    <div class="primary-button-wrapper">
+        <a type="button" class="btn btn-primary btn-lg" th:href="@{/teachers/insert}">Εισαγωγή Διδάσκοντα</a>
+    </div>
+    <div class="primary-button-wrapper">
+        <a type="button" class="btn btn-primary btn-lg" th:href="@{/teachers/search(page='1')}">Αναζήτηση Διδάσκοντα</a>
+    </div>
+    <div>
+        <a type="button" class="btn btn-secondary btn-lg button-back" th:href="@{/}"> < Πίσω </a>
+    </div>
+
+    <!--<button class="btn btn-primary"><a th:href="@{/teachers}">Teachers</a></button>
+      <button class="btn btn-primary"><a th:href="@{/version}">Version</a></button>-->
+</div>
+<div th:replace="/layout/footer :: footer"> </div>
+</body>
+</html>
+
+

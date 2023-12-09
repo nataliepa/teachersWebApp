@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers WebApp</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+    <div th:replace="/layout/header :: header"> </div>
+    <div class="container-fluid buttons main-content">
+        <div class="primary-button-wrapper">
+          <a type="button" class="btn btn-primary btn-lg button-teachers" th:href="@{/teachers}">Διδάσκοντες</a>
+        </div>
+        <div class="primary-button-wrapper">
+            <a type="button" class="btn btn-primary btn-lg button-teachers-api" th:href="@{/teachers/v2}">Διδάσκοντες με χρήση Rest API</a>
+        </div>
+        <div class="primary-button-wrapper">
+          <a type="button" class="btn btn-primary btn-lg button-version" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Έκδοση</a>
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="btn-close modal-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <h5>Εκδοση: 0.0.1</h5>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Εντάξει</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    <div th:replace="/layout/footer :: footer"> </div>
+</body>
+</html>
